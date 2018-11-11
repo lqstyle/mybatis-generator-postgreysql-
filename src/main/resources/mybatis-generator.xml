@@ -15,7 +15,7 @@
       <!-- 抑制警告 -->
       <property name="suppressTypeWarnings" value="true"/>
       <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
-      <property name="suppressAllComments" value="false"/>
+      <property name="suppressAllComments" value="true"/>
       <!-- 是否生成注释代时间戳-->
       <property name="suppressDate" value="true"/>
     </plugin>

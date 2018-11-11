@@ -1,12 +1,15 @@
 package com.kpmg.bmwsfm.entity;
 
+import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
  * Table: sys_user
  */
 @Data
+@TableName("sys_user")
 public class SysUser implements Serializable {
     /**
      * Table:     sys_user

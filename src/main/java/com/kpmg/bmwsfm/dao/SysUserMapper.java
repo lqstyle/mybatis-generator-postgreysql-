@@ -1,18 +1,9 @@
 package com.kpmg.bmwsfm.dao;
 
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.kpmg.bmwsfm.entity.SysUser;
 
-public interface SysUserMapper {
 
-  int deleteByPrimaryKey(Integer id);
+public interface SysUserMapper extends BaseMapper<SysUser> {
 
-  int insert(SysUser record);
-
-  int insertSelective(SysUser record);
-
-  SysUser selectByPrimaryKey(Integer id);
-
-  int updateByPrimaryKeySelective(SysUser record);
-
-  int updateByPrimaryKey(SysUser record);
 }
