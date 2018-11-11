@@ -32,6 +32,10 @@ public class SysUserController {
     //改
     Map<String, Object> map = new HashMap<>();
     map.put("username", "lqq");
+
+    //自定义查看，可多表关联
+    List<Map<String, Object>> lists = sysUserService.selectMapByMap(map);
+
     //查
     List<SysUser> userList = sysUserService.selectByMap(map);
     SysUser sysUser1 = userList.get(0);

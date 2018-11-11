@@ -1,7 +1,10 @@
 package com.kpmg.bmwsfm.service;
 
+import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.IService;
 import com.kpmg.bmwsfm.entity.SysUser;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author lucasliang
@@ -9,4 +12,5 @@ import com.kpmg.bmwsfm.entity.SysUser;
  */
 public interface SysUserService extends IService<SysUser> {
 
+  List<Map<String, Object>> selectMapByMap(Map<String, Object> map);
 }
