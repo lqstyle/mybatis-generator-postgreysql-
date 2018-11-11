@@ -6,16 +6,30 @@
   <classPathEntry location="C:\D\mavenProject\git\postgresql-42.2.5.jar"/>
 
   <context id="test" targetRuntime="MyBatis3">
-    <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>
+   <!-- <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>-->
     <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
-    <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
+<!--    <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>-->
+
+    <!-- 自定义的注释生成插件-->
+    <plugin type="com.chrm.mybatis.generator.plugins.CommentPlugin">
+      <!-- 抑制警告 -->
+      <property name="suppressTypeWarnings" value="true"/>
+      <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+      <property name="suppressAllComments" value="false"/>
+      <!-- 是否生成注释代时间戳-->
+      <property name="suppressDate" value="true"/>
+    </plugin>
+    <!-- 整合lombok-->
+    <plugin type="com.chrm.mybatis.generator.plugins.LombokPlugin">
+      <property name="hasLombok" value="true"/>
+    </plugin>
 
     <commentGenerator>
       <!-- 这个元素用来去除指定生成的注释中是否包含生成的日期 false:表示保护 -->
       <!-- 如果生成日期，会造成即使修改一个字段，整个实体类所有属性都会发生变化，不利于版本控制，所以设置为true -->
       <property name="suppressDate" value="true"/>
       <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
-      <property name="suppressAllComments" value="false"/>
+      <property name="suppressAllComments" value="true"/>
     </commentGenerator>
     <!--数据库链接URL，用户名、密码 -->
     <jdbcConnection driverClass="org.postgresql.Driver"
